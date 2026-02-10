@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our complete product catalog at TechMart">
+    <title>Products - TechMart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="TechMart Logo" width="150" height="50">
+                    </a>
+                </div>
+                
+                <div class="search-container">
+                    <form role="search" action="#" method="get">
+                        <input type="search" placeholder="Search products..." aria-label="Search products" name="q" required>
+                        <button type="submit" aria-label="Search">🔍</button>
+                    </form>
+                </div>
+                
+                <div class="nav-links">
+                    <ul role="menubar">
+                        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="none"><a href="products.html" role="menuitem" class="active">Products</a></li>
+                        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="cart.html" role="menuitem" class="cart-link">🛒 Cart <span id="cart-count">0</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">Products</li>
+            </ol>
+        </div>
+
+        <section class="products-header">
+            <h1>Our Products</h1>
+            <p>Discover our complete range of premium electronics and accessories</p>
+        </section>
+
+        <aside class="filters" role="complementary" aria-label="Product filters">
+            <h2>Filter Products</h2>
+            <form class="filter-form">
+                <fieldset>
+                    <legend>Category</legend>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="category" value="smartphones"> Smartphones</label>
+                        <label><input type="checkbox" name="category" value="laptops"> Laptops</label>
+                        <label><input type="checkbox" name="category" value="audio"> Audio</label>
+                        <label><input type="checkbox" name="category" value="accessories"> Accessories</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Price Range</legend>
+                    <div class="price-range">
+                        <label for="min-price">Min: $<input type="number" id="min-price" name="min-price" min="0" step="10"></label>
+                        <label for="max-price">Max: $<input type="number" id="max-price" name="max-price" min="0" step="10"></label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Brand</legend>
+                    <select name="brand" aria-label="Filter by brand">
+                        <option value="">All Brands</option>
+                        <option value="apple">Apple</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="sony">Sony</option>
+                        <option value="dell">Dell</option>
+                        <option value="hp">HP</option>
+                    </select>
+                </fieldset>
+
+                <button type="submit">Apply Filters</button>
+                <button type="reset">Clear All</button>
+            </form>
+        </aside>
+
+        <section class="products-grid" aria-label="Product listings">
+            <div class="sort-options">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by" name="sort-by">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                    <option value="newest">Newest First</option>
+                </select>
+            </div>
+
+            <div class="product-list">
+                <article class="product-card detailed" itemscope itemtype="http://schema.org/Product">
+                    <figure>
+                        <img src="iphone-pro.jpg" alt="iPhone 15 Pro" width="300" height="250" itemprop="image">
+                    </figure>
+                    <div class="product-details">
+                        <header>
+                            <h3 itemprop="name">iPhone 15 Pro</h3>
+                            <div class="product-badges">
+                                <span class="badge new">New</span>
+                                <span class="badge bestseller">Bestseller</span>
+                            </div>
+                        </header>
+                        
+                        <p itemprop="description">The most advanced iPhone ever with titanium design, Action Button, and powerful A17 Pro chip.</p>
+                        
+                        <div class="specifications">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>6.1-inch Super Retina XDR display</li>
+                                <li>A17 Pro chip with 6-core GPU</li>
+                                <li>48MP Main camera system</li>
+                                <li>Up to 23 hours video playback</li>
+                            </ul>
+                        </div>
+
+                        <div class="variants">
+                            <h4>Storage:</h4>
+                            <div class="variant-options">
+                                <label><input type="radio" name="storage-1" value="128" checked> 128GB</label>
+                                <label><input type="radio" name="storage-1" value="256"> 256GB</label>
+                                <label><input type="radio" name="storage-1" value="512"> 512GB</label>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <h4>Color:</h4>
+                            <div class="color-swatches">
+                                <label title="Natural Titanium"><input type="radio" name="color-1" value="natural" checked><span class="color-swatch natural"></span></label>
+                                <label title="Blue Titanium"><input type="radio" name="color-1" value="blue"><span class="color-swatch blue"></span></label>
+                                <label title="White Titanium"><input type="radio" name="color-1" value="white"><span class="color-swatch white"></span></label>
+                                <label title="Black Titanium"><input type="radio" name="color-1" value="black"><span class="color-swatch black"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="price-section">
+                            <div class="pricing">
+                                <span class="current-price" itemprop="price">$999.99</span>
+                                <span class="original-price">$1,099.99</span>
+                                <span class="discount">Save $100</span>
+                            </div>
+                            
+                            <div class="rating-review">
+                                <div class="rating" role="img" aria-label="4.8 out of 5 stars">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-number">(4.8/5)</span>
+                                </div>
+                                <a href="#reviews" class="review-link">Read 234 reviews</a>
+                            </div>
+                        </div>
+
+                        <div class="stock-info">
+                            <span class="in-stock">✅ In Stock</span>
+                            <span class="shipping">🚚 Free shipping</span>
+                            <span class="warranty">🛡️ 1-year warranty</span>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="add-to-cart primary" data-product-id="4" data-product-name="iPhone 15 Pro" data-product-price="999.99">
+                                Add to Cart
+                            </button>
+                            <button class="add-to-wishlist" aria-label="Add to wishlist">❤️</button>
+                            <button class="compare" aria-label="Compare product">⚖️</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card detailed" itemscope itemtype="http://schema.org/Product">
+                    <figure>
+                        <img src="macbook-pro.jpg" alt="MacBook Pro 14-inch" width="300" height="250" itemprop="image">
+                    </figure>
+                    <div class="product-details">
+                        <header>
+                            <h3 itemprop="name">MacBook Pro 14-inch</h3>
+                            <div class="product-badges">
+                                <span class="badge pro">Pro</span>
+                            </div>
+                        </header>
+                        
+                        <p itemprop="description">Supercharged by M3, M3 Pro, or M3 Max chips. Up to 22 hours of battery life. Liquid Retina XDR display.</p>
+                        
+                        <div class="specifications">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>14.2-inch Liquid Retina XDR display</li>
+                                <li>Apple M3 chip with 8-core CPU</li>
+                                <li>16GB unified memory</li>
+                                <li>512GB SSD storage</li>
+                            </ul>
+                        </div>
+
+                        <div class="variants">
+                            <h4>Configuration:</h4>
+                            <div class="variant-options">
+                                <label><input type="radio" name="config-2" value="m3" checked> M3 8-core CPU</label>
+                                <label><input type="radio" name="config-2" value="m3pro"> M3 Pro 11-core CPU</label>
+                                <label><input type="radio" name="config-2" value="m3max"> M3 Max 14-core CPU</label>
+                            </div>
+                        </div>
+
+                        <div class="price-section">
+                            <div class="pricing">
+                                <span class="current-price" itemprop="price">$1,599.99</span>
+                            </div>
+                            
+                            <div class="rating-review">
+                                <div class="rating" role="img" aria-label="4.9 out of 5 stars">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-number">(4.9/5)</span>
+                                </div>
+                                <a href="#reviews" class="review-link">Read 156 reviews</a>
+                            </div>
+                        </div>
+
+                        <div class="stock-info">
+                            <span class="low-stock">⚠️ Only 3 left</span>
+                            <span class="shipping">🚚 Free shipping</span>
+                            <span class="warranty">🛡️ 2-year warranty</span>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="add-to-cart primary" data-product-id="5" data-product-name="MacBook Pro 14-inch" data-product-price="1599.99">
+                                Add to Cart
+                            </button>
+                            <button class="add-to-wishlist" aria-label="Add to wishlist">❤️</button>
+                            <button class="compare" aria-label="Compare product">⚖️</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card detailed" itemscope itemtype="http://schema.org/Product">
+                    <figure>
+                        <img src="airpods-pro.jpg" alt="AirPods Pro (2nd generation)" width="300" height="250" itemprop="image">
+                    </figure>
+                    <div class="product-details">
+                        <header>
+                            <h3 itemprop="name">AirPods Pro (2nd generation)</h3>
+                            <div class="product-badges">
+                                <span class="badge popular">Popular</span>
+                            </div>
+                        </header>
+                        
+                        <p itemprop="description">Richer audio experience with Adaptive Audio, Personalized Spatial Audio, and Active Noise Cancellation.</p>
+                        
+                        <div class="specifications">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Active Noise Cancellation</li>
+                                <li>Adaptive Audio</li>
+                                <li>Up to 30 hours total battery</li>
+                                <li>MagSafe Charging Case</li>
+                            </ul>
+                        </div>
+
+                        <div class="price-section">
+                            <div class="pricing">
+                                <span class="current-price" itemprop="price">$249.99</span>
+                                <span class="original-price">$279.99</span>
+                                <span class="discount">Save $30</span>
+                            </div>
+                            
+                            <div class="rating-review">
+                                <div class="rating" role="img" aria-label="4.7 out of 5 stars">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-number">(4.7/5)</span>
+                                </div>
+                                <a href="#reviews" class="review-link">Read 892 reviews</a>
+                            </div>
+                        </div>
+
+                        <div class="stock-info">
+                            <span class="in-stock">✅ In Stock</span>
+                            <span class="shipping">🚚 Free shipping</span>
+                            <span class="warranty">🛡️ 1-year warranty</span>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="add-to-cart primary" data-product-id="6" data-product-name="AirPods Pro (2nd generation)" data-product-price="249.99">
+                                Add to Cart
+                            </button>
+                            <button class="add-to-wishlist" aria-label="Add to wishlist">❤️</button>
+                            <button class="compare" aria-label="Compare product">⚖️</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination" role="navigation" aria-label="Product pagination">
+                <a href="#" aria-label="Go to previous page" class="disabled">← Previous</a>
+                <a href="#" aria-current="page" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#" aria-label="Go to next page">Next →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechMart</h3>
+                <address>
+                    123 Tech Street<br>
+                    Digital City, TC 12345<br>
+                    <a href="tel:+1234567890">Phone: (123) 456-7890</a><br>
+                    <a href="mailto:info@techmart.com">Email: info@techmart.com</a>
+                </address>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
