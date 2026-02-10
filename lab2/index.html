@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flipmart - Your one-stop shop for electronics, gadgets, and accessories">
+    <meta name="keywords" content="electronics, gadgets, smartphones, laptops, accessories">
+    <meta name="author" content="Madhusmita Choudhary">
+    <title>Flipmart - Premium Electronics Store</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div>
+                <div>
+                    <a href="index.html">
+                        <img src="logo.png" alt="Flipmart Logo" width="150" height="50">
+                    </a>
+                </div>
+                
+                <div>
+                    <form role="search" action="#" method="get">
+                        <input type="search" placeholder="Search products..." aria-label="Search products" name="q" required>
+                        <button type="submit" aria-label="Search">🔍</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <ul role="menubar">
+                        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="none"><a href="products.html" role="menuitem">Products</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="cart.html" role="menuitem">🛒 Cart <span id="cart-count">0</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section aria-labelledby="hero-heading">
+            <div>
+                <h1 id="hero-heading">Welcome to Flipmart</h1>
+                <p>Discover the latest in technology and electronics</p>
+                <a href="products.html" role="button">Shop Now</a>
+            </div>
+            <figure>
+                <img src="hero-tech.jpg" alt="Latest technology products showcase" width="600" height="400">
+                <figcaption>Cutting-edge technology at your fingertips</figcaption>
+            </figure>
+        </section>
+
+        <section aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Products</h2>
+            <div>
+                <article itemscope itemtype="http://schema.org/Product">
+                    <figure>
+                        <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-m33-1.jpg" alt="Latest Smartphone" width="250" height="200" itemprop="image">
+                        <figcaption itemprop="name">Premium Smartphone Pro</figcaption>
+                    </figure>
+                    <div>
+                        <h3 itemprop="name">Premium Smartphone Pro</h3>
+                        <p itemprop="description">Latest flagship smartphone with advanced camera system and 5G connectivity</p>
+                        <div>
+                            <span itemprop="price">$899.99</span>
+                            <div role="img" aria-label="4.5 out of 5 stars">
+                                <span>⭐⭐⭐⭐☆</span>
+                                <small>(4.5/5 - 128 reviews)</small>
+                            </div>
+                        </div>
+                        <button data-product-id="1" data-product-name="Premium Smartphone Pro" data-product-price="899.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article itemscope itemtype="http://schema.org/Product">
+                    <figure>
+                        <img src="https://in-files.apjonlinecdn.com/landingpages/category-family/hp-gaming-family/images/w100_omen_laptops_desktop_default_en_v1.png" alt="Gaming Laptop" width="250" height="200" itemprop="image">
+                        <figcaption itemprop="name">Ultra Gaming Laptop</figcaption>
+                    </figure>
+                    <div>
+                        <h3 itemprop="name">Ultra Gaming Laptop</h3>
+                        <p itemprop="description">High-performance gaming laptop with RTX graphics and 16GB RAM</p>
+                        <div>
+                            <span itemprop="price">$1,299.99</span>
+                            <div role="img" aria-label="4.8 out of 5 stars">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <small>(4.8/5 - 89 reviews)</small>
+                            </div>
+                        </div>
+                        <button data-product-id="2" data-product-name="Ultra Gaming Laptop" data-product-price="1299.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article itemscope itemtype="http://schema.org/Product">
+                    <figure>
+                        <img src="https://www.leafstudios.in/cdn/shop/files/1_a43c5e0b-3a47-497d-acec-b4764259b10e_800x.png?v=1750486829" alt="Wireless Headphones" width="250" height="200" itemprop="image">
+                        <figcaption itemprop="name">Premium Wireless Headphones</figcaption>
+                    </figure>
+                    <div>
+                        <h3 itemprop="name">Premium Wireless Headphones</h3>
+                        <p itemprop="description">Noise-cancelling wireless headphones with 30-hour battery life</p>
+                        <div>
+                            <span itemprop="price">$249.99</span>
+                            <div role="img" aria-label="4.6 out of 5 stars">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <small>(4.6/5 - 203 reviews)</small>
+                            </div>
+                        </div>
+                        <button data-product-id="3" data-product-name="Premium Wireless Headphones" data-product-price="249.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="categories-heading">
+            <h2 id="categories-heading">Shop by Category</h2>
+            <div>
+                <div>
+                    <img src="smartphones-category.jpg" alt="Smartphones category" width="200" height="150">
+                    <h3>Smartphones</h3>
+                    <p>Latest mobile devices</p>
+                    <a href="products.html?category=smartphones">Browse →</a>
+                </div>
+                <div>
+                    <img src="laptops-category.jpg" alt="Laptops category" width="200" height="150">
+                    <h3>Laptops</h3>
+                    <p>Powerful computing solutions</p>
+                    <a href="products.html?category=laptops">Browse →</a>
+                </div>
+                <div>
+                    <img src="accessories-category.jpg" alt="Accessories category" width="200" height="150">
+                    <h3>Accessories</h3>
+                    <p>Essential tech accessories</p>
+                    <a href="products.html?category=accessories">Browse →</a>
+                </div>
+                <div>
+                    <img src="audio-category.jpg" alt="Audio category" width="200" height="150">
+                    <h3>Audio</h3>
+                    <p>Headphones & speakers</p>
+                    <a href="products.html?category=audio">Browse →</a>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="newsletter-heading">
+            <div>
+                <h2 id="newsletter-heading">Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive deals and latest product updates</p>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Newsletter Subscription</legend>
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required aria-describedby="email-help">
+                        <small id="email-help">We'll never share your email with anyone else.</small>
+                        <button type="submit">Subscribe</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div>
+            <div>
+                <h3>Flipmart</h3>
+                <address>
+                    Karnataka, India<br>
+                    <a href="tel:+1234567890">Phone: (123) 456-7890</a><br>
+                    <a href="mailto:flipmart.info@flip.com">Email: flipmart.info@flip.com</a>
+                </address>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="shipping.html">Shipping Info</a></li>
+                    <li><a href="returns.html">Returns</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Follow Us</h4>
+                <div>
+                    <a href="#" aria-label="Follow us on Facebook">📘</a>
+                    <a href="#" aria-label="Follow us on Twitter">🐦</a>
+                    <a href="#" aria-label="Follow us on Instagram">📷</a>
+                    <a href="#" aria-label="Follow us on LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <p>&copy; 2026 Flipmart. All rights reserved. | Designed by Madhusmita Choudhary</p>
+            <time datetime="2026-02-10">Last updated: February 10, 2026</time>
+        </div>
+    </footer>
+
+</body>
+</html>

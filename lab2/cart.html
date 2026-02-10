@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping cart - Review your selected items">
+    <title>Shopping Cart - Flipmart</title>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div>
+                <div>
+                    <a href="index.html">
+                        <img src="logo.png" alt="Flipmart Logo" width="150" height="50">
+                    </a>
+                </div>
+                
+                <div>
+                    <ul role="menubar">
+                        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="none"><a href="products.html" role="menuitem">Products</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="cart.html" role="menuitem">🛒 Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <div role="navigation" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">Shopping Cart</li>
+            </ol>
+        </div>
+
+        <section>
+            <header>
+                <h1>Your Shopping Cart</h1>
+                <p>3 items in your cart</p>
+            </header>
+
+            <div>
+                <div>
+                    <article data-product-id="1">
+                        <figure>
+                            <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-m33-1.jpg" alt="Premium Smartphone Pro" width="100" height="80">
+                        </figure>
+                        
+                        <div>
+                            <header>
+                                <h3><a href="products.html#product-1">Premium Smartphone Pro</a></h3>
+                                <button aria-label="Remove Premium Smartphone Pro from cart">×</button>
+                            </header>
+                            
+                            <div>
+                                <dl>
+                                    <dt>Color:</dt>
+                                    <dd>Midnight Black</dd>
+                                    <dt>Storage:</dt>
+                                    <dd>256GB</dd>
+                                </dl>
+                            </div>
+                            
+                            <div>
+                                <span>✅ In stock</span>
+                                <span>Ships in 1-2 business days</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="qty-1">Quantity for Premium Smartphone Pro</label>
+                            <div>
+                                <button type="button" data-target="qty-1" aria-label="Decrease quantity">-</button>
+                                <input type="number" id="qty-1" name="quantity" value="1" min="1" max="10" aria-describedby="qty-help-1">
+                                <button type="button" data-target="qty-1" aria-label="Increase quantity">+</button>
+                            </div>
+                            <small id="qty-help-1">Maximum 10 items</small>
+                        </div>
+                        
+                        <div>
+                            <span>$899.99</span>
+                            <span>$899.99</span>
+                        </div>
+                    </article>
+
+                    <article data-product-id="2">
+                        <figure>
+                            <img src="https://www.leafstudios.in/cdn/shop/files/1_a43c5e0b-3a47-497d-acec-b4764259b10e_800x.png?v=1750486829" alt="Premium Wireless Headphones" width="100" height="80">
+                        </figure>
+                        
+                        <div>
+                            <header>
+                                <h3><a href="products.html#product-2">Premium Wireless Headphones</a></h3>
+                                <button aria-label="Remove Premium Wireless Headphones from cart">×</button>
+                            </header>
+                            
+                            <div>
+                                <dl>
+                                    <dt>Color:</dt>
+                                    <dd>Space Gray</dd>
+                                </dl>
+                            </div>
+                            
+                            <div>
+                                <span>✅ In stock</span>
+                                <span>Free shipping</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="qty-2">Quantity for Premium Wireless Headphones</label>
+                            <div>
+                                <button type="button" data-target="qty-2" aria-label="Decrease quantity">-</button>
+                                <input type="number" id="qty-2" name="quantity" value="2" min="1" max="10" aria-describedby="qty-help-2">
+                                <button type="button" data-target="qty-2" aria-label="Increase quantity">+</button>
+                            </div>
+                            <small id="qty-help-2">Maximum 10 items</small>
+                        </div>
+                        
+                        <div>
+                            <span>$249.99</span>
+                            <span>$499.98</span>
+                        </div>
+                    </article>
+
+                    <div>
+                        <button onclick="location.href='products.html'">← Continue Shopping</button>
+                        <button>Clear Cart</button>
+                    </div>
+                </div>
+
+                <aside role="complementary">
+                    <div>
+                        <h2>Order Summary</h2>
+                        
+                        <div>
+                            <dl>
+                                <dt>Subtotal (3 items):</dt>
+                                <dd>$1,399.97</dd>
+                                
+                                <dt>Shipping:</dt>
+                                <dd>Free</dd>
+                                
+                                <dt>Tax:</dt>
+                                <dd>$112.00</dd>
+                                
+                                <dt>Total:</dt>
+                                <dd>$1,511.97</dd>
+                            </dl>
+                        </div>
+                        
+                        <div>
+                            <button type="button">
+                                <span>Proceed to Checkout</span>
+                                <span>$1,511.97</span>
+                            </button>
+                            
+                            <div>
+                                <p>We accept:</p>
+                                <div>
+                                    <span title="Visa">💳</span>
+                                    <span title="Mastercard">💳</span>
+                                    <span title="PayPal">🅿️</span>
+                                    <span title="Apple Pay">📱</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <details>
+                                <summary>Have a promo code?</summary>
+                                <form>
+                                    <label for="promo-code">Promo code</label>
+                                    <div>
+                                        <input type="text" id="promo-code" name="promo-code" placeholder="Enter code" maxlength="20">
+                                        <button type="submit">Apply</button>
+                                    </div>
+                                </form>
+                            </details>
+                        </div>
+                        
+                        <div>
+                            <h3>Shipping Information</h3>
+                            <ul>
+                                <li>🚚 Free shipping on orders over $75</li>
+                                <li>📦 Standard delivery: 3-5 business days</li>
+                                <li>⚡ Express delivery: 1-2 business days</li>
+                                <li>🔒 Secure checkout with SSL encryption</li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section aria-labelledby="related-heading">
+            <h2 id="related-heading">You might also like</h2>
+            <div>
+                <article>
+                    <figure>
+                        <img src="https://alogic.in/cdn/shop/files/Alogic_Elite_Power_Laptop_Stand_With_Wireless_Charger_Black_1.webp?v=1719555163&width=1200" alt="Laptop Stand" width="150" height="120">
+                    </figure>
+                    <div>
+                        <h3>Adjustable Laptop Stand</h3>
+                        <span>$39.99</span>
+                        <button data-product-id="7">Add to Cart</button>
+                    </div>
+                </article>
+                
+                <article>
+                    <figure>
+                        <img src="https://cdn.shopify.com/s/files/1/0267/0254/7507/products/phone-case_150x120.jpg" alt="Phone Case" width="150" height="120">
+                    </figure>
+                    <div>
+                        <h3>Protective Phone Case</h3>
+                        <span>$24.99</span>
+                        <button data-product-id="8">Add to Cart</button>
+                    </div>
+                </article>
+                
+                <article>
+                    <figure>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIuOuy5Qfjh0gKEE2leh54ns1Or5ewn3D_nA&s" alt="Wireless Charger" width="150" height="120">
+                    </figure>
+                    <div>
+                        <h3>Wireless Charging Pad</h3>
+                        <span>$29.99</span>
+                        <button data-product-id="9">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div>
+            <div>
+                <h3>Flipmart</h3>
+                <address>
+                    Karnataka, India<br>
+                    <a href="tel:+1234567890">Phone: (123) 456-7890</a><br>
+                    <a href="mailto:flipmart.info@flip.com">Email: flipmart.info@flip.com</a>
+                </address>
+            </div>
+        </div>
+        
+        <div>
+            <p>&copy; 2026 Flipmart. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
