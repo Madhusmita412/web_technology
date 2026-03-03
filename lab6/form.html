@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #75cc72, #04a3ed);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            color: #333;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 15px;
+            width: 380px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+            color: white;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            box-shadow: 0 0 8px rgba(255,255,255,0.8);
+        }
+
+        .gender-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn {
+            background: #028c32;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #009f86;
+        }
+
+        .delete-btn {
+            background: #ff4b5c;
+            color: white;
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .table-container {
+            width: 90%;
+            max-width: 900px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        tr:hover {
+            background: #e6e6ff;
+        }
+
+        .counter {
+            margin-bottom: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media(max-width:500px){
+            .card{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>User Registration</h2>
+
+<div class="card">
+<form id="registrationForm">
+
+    <label>Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <label>Age:</label>
+    <input type="number" id="age" min="1" required>
+
+    <label>Gender:</label>
+    <div class="gender-group">
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+    </div>
+
+    <label>Country:</label>
+    <select id="country" required>
+        <option value="">Select Country</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Canada</option>
+    </select>
+
+    <label>Message:</label>
+    <textarea id="message" rows="3" required></textarea>
+
+    <button type="submit" class="submit-btn">Submit</button>
+
+</form>
+</div>
+
+<div class="counter" id="counter"></div>
+
+<div class="table-container">
+    <div id="output"></div>
+</div>
+
+<script>
+
+let users = [];
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let userData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        age: document.getElementById("age").value,
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        country: document.getElementById("country").value,
+        message: document.getElementById("message").value
+    };
+
+    users.push(userData);
+
+    displayTable();
+    this.reset();
+});
+
+function displayTable() {
+
+    if(users.length === 0){
+        document.getElementById("output").innerHTML = "";
+        document.getElementById("counter").innerText = "";
+        return;
+    }
+
+    let tableHTML = `
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+                <th>Message</th>
+                <th>Actions</th>
+            </tr>
+    `;
+
+    users.forEach((user, index) => {
+        tableHTML += `
+            <tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.age}</td>
+                <td>${user.gender}</td>
+                <td>${user.country}</td>
+                <td>${user.message}</td>
+                <td>
+                    <button class="copy-btn" onclick="copySingleUser(${index})">Copy</button>
+                    <button class="delete-btn" onclick="deleteUser(${index})">Delete</button>
+                </td>
+            </tr>
+        `;
+    });
+
+    tableHTML += "</table>";
+
+    document.getElementById("output").innerHTML = tableHTML;
+    document.getElementById("counter").innerText = "Total Users: " + users.length;
+}
+
+function deleteUser(index){
+    users.splice(index,1);
+    displayTable();
+}
+
+function copySingleUser(index){
+
+    let user = users[index];
+
+    let text = `
+Name: ${user.name}
+Email: ${user.email}
+Age: ${user.age}
+Gender: ${user.gender}
+Country: ${user.country}
+Message: ${user.message}
+    `;
+
+    navigator.clipboard.writeText(text)
+        .then(() => alert("User data copied successfully!"));
+}
+
+</script>
+
+</body>
+</html>
