@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,15 +6,49 @@
     <meta name="description" content="Browse our complete product catalog at TechMart">
     <title>Products - TechMart</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Shared Experiment Navbar */
+        .exp-nav {
+            list-style: none;
+            padding: 10px 16px;
+            margin: 0;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .exp-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .exp-nav a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-      <ul style="list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
-            <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
-            <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
-            <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
-            <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
-        </ul>
-    <header role="banner">
+
+<ul class="exp-nav">
+    <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
+    <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
+    <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
+    <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
+    <li><a href="/web_technology/lab5/scientific_calculator.html">Exp 5: Scientific Calculator</a></li>
+    <li><a href="/web_technology/lab6/index.html">Exp 6: Form Validation</a></li>
+    <li><a href="/web_technology/lab7/index.html">Exp 7: Event Handling</a></li>
+    <li><a href="/web_technology/lab8/index.php">Exp 8: PHP Form Handling</a></li>
+    <li><a href="/web_technology/lab9/index.php">Exp 9: PHP + MySQL Products</a></li>
+    <li><a href="/web_technology/lab10/index.php">Exp 10: Sessions and Cookies</a></li>
+</ul>
+
+
+<header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo">
@@ -26,7 +60,7 @@
                 <div class="search-container">
                     <form role="search" action="#" method="get">
                         <input type="search" placeholder="Search products..." aria-label="Search products" name="q" required>
-                        <button type="submit" aria-label="Search">🔍</button>
+                        <button type="submit" aria-label="Search">ðŸ”</button>
                     </form>
                 </div>
                 
@@ -36,7 +70,7 @@
                         <li role="none"><a href="products.html" role="menuitem" class="active">Products</a></li>
                         <li role="none"><a href="about.html" role="menuitem">About</a></li>
                         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                        <li role="none"><a href="cart.html" role="menuitem" class="cart-link">🛒 Cart <span id="cart-count">0</span></a></li>
+                        <li role="none"><a href="cart.html" role="menuitem" class="cart-link">ðŸ›’ Cart <span id="cart-count">0</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -160,7 +194,7 @@
                             
                             <div class="rating-review">
                                 <div class="rating" role="img" aria-label="4.8 out of 5 stars">
-                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span>â­â­â­â­â­</span>
                                     <span class="rating-number">(4.8/5)</span>
                                 </div>
                                 <a href="#reviews" class="review-link">Read 234 reviews</a>
@@ -168,17 +202,17 @@
                         </div>
 
                         <div class="stock-info">
-                            <span class="in-stock">✅ In Stock</span>
-                            <span class="shipping">🚚 Free shipping</span>
-                            <span class="warranty">🛡️ 1-year warranty</span>
+                            <span class="in-stock">âœ… In Stock</span>
+                            <span class="shipping">ðŸšš Free shipping</span>
+                            <span class="warranty">ðŸ›¡ï¸ 1-year warranty</span>
                         </div>
 
                         <div class="product-actions">
                             <button class="add-to-cart primary" data-product-id="4" data-product-name="iPhone 15 Pro" data-product-price="999.99">
                                 Add to Cart
                             </button>
-                            <button class="add-to-wishlist" aria-label="Add to wishlist">❤️</button>
-                            <button class="compare" aria-label="Compare product">⚖️</button>
+                            <button class="add-to-wishlist" aria-label="Add to wishlist">â¤ï¸</button>
+                            <button class="compare" aria-label="Compare product">âš–ï¸</button>
                         </div>
                     </div>
                 </article>
@@ -223,7 +257,7 @@
                             
                             <div class="rating-review">
                                 <div class="rating" role="img" aria-label="4.9 out of 5 stars">
-                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span>â­â­â­â­â­</span>
                                     <span class="rating-number">(4.9/5)</span>
                                 </div>
                                 <a href="#reviews" class="review-link">Read 156 reviews</a>
@@ -231,17 +265,17 @@
                         </div>
 
                         <div class="stock-info">
-                            <span class="low-stock">⚠️ Only 3 left</span>
-                            <span class="shipping">🚚 Free shipping</span>
-                            <span class="warranty">🛡️ 2-year warranty</span>
+                            <span class="low-stock">âš ï¸ Only 3 left</span>
+                            <span class="shipping">ðŸšš Free shipping</span>
+                            <span class="warranty">ðŸ›¡ï¸ 2-year warranty</span>
                         </div>
 
                         <div class="product-actions">
                             <button class="add-to-cart primary" data-product-id="5" data-product-name="MacBook Pro 14-inch" data-product-price="1599.99">
                                 Add to Cart
                             </button>
-                            <button class="add-to-wishlist" aria-label="Add to wishlist">❤️</button>
-                            <button class="compare" aria-label="Compare product">⚖️</button>
+                            <button class="add-to-wishlist" aria-label="Add to wishlist">â¤ï¸</button>
+                            <button class="compare" aria-label="Compare product">âš–ï¸</button>
                         </div>
                     </div>
                 </article>
@@ -279,7 +313,7 @@
                             
                             <div class="rating-review">
                                 <div class="rating" role="img" aria-label="4.7 out of 5 stars">
-                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span>â­â­â­â­â­</span>
                                     <span class="rating-number">(4.7/5)</span>
                                 </div>
                                 <a href="#reviews" class="review-link">Read 892 reviews</a>
@@ -287,29 +321,29 @@
                         </div>
 
                         <div class="stock-info">
-                            <span class="in-stock">✅ In Stock</span>
-                            <span class="shipping">🚚 Free shipping</span>
-                            <span class="warranty">🛡️ 1-year warranty</span>
+                            <span class="in-stock">âœ… In Stock</span>
+                            <span class="shipping">ðŸšš Free shipping</span>
+                            <span class="warranty">ðŸ›¡ï¸ 1-year warranty</span>
                         </div>
 
                         <div class="product-actions">
                             <button class="add-to-cart primary" data-product-id="6" data-product-name="AirPods Pro (2nd generation)" data-product-price="249.99">
                                 Add to Cart
                             </button>
-                            <button class="add-to-wishlist" aria-label="Add to wishlist">❤️</button>
-                            <button class="compare" aria-label="Compare product">⚖️</button>
+                            <button class="add-to-wishlist" aria-label="Add to wishlist">â¤ï¸</button>
+                            <button class="compare" aria-label="Compare product">âš–ï¸</button>
                         </div>
                     </div>
                 </article>
             </div>
 
             <div class="pagination" role="navigation" aria-label="Product pagination">
-                <a href="#" aria-label="Go to previous page" class="disabled">← Previous</a>
+                <a href="#" aria-label="Go to previous page" class="disabled">â† Previous</a>
                 <a href="#" aria-current="page" class="active">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
                 <a href="#">4</a>
-                <a href="#" aria-label="Go to next page">Next →</a>
+                <a href="#" aria-label="Go to next page">Next â†’</a>
             </div>
         </section>
     </main>
@@ -344,3 +378,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+

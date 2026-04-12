@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,15 +6,49 @@
     <meta name="description" content="Shopping cart - Review your selected items">
     <title>Shopping Cart - TechMart</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Shared Experiment Navbar */
+        .exp-nav {
+            list-style: none;
+            padding: 10px 16px;
+            margin: 0;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .exp-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .exp-nav a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-      <ul style="list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
-            <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
-            <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
-            <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
-            <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
-        </ul>
-    <header role="banner">
+
+<ul class="exp-nav">
+    <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
+    <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
+    <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
+    <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
+    <li><a href="/web_technology/lab5/scientific_calculator.html">Exp 5: Scientific Calculator</a></li>
+    <li><a href="/web_technology/lab6/index.html">Exp 6: Form Validation</a></li>
+    <li><a href="/web_technology/lab7/index.html">Exp 7: Event Handling</a></li>
+    <li><a href="/web_technology/lab8/index.php">Exp 8: PHP Form Handling</a></li>
+    <li><a href="/web_technology/lab9/index.php">Exp 9: PHP + MySQL Products</a></li>
+    <li><a href="/web_technology/lab10/index.php">Exp 10: Sessions and Cookies</a></li>
+</ul>
+
+
+<header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo">
@@ -29,7 +63,7 @@
                         <li role="none"><a href="products.html" role="menuitem">Products</a></li>
                         <li role="none"><a href="about.html" role="menuitem">About</a></li>
                         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                        <li role="none"><a href="cart.html" role="menuitem" class="cart-link active">🛒 Cart</a></li>
+                        <li role="none"><a href="cart.html" role="menuitem" class="cart-link active">ðŸ›’ Cart</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +94,7 @@
                         <div class="item-details">
                             <header>
                                 <h3><a href="products.html#product-1">Premium Smartphone Pro</a></h3>
-                                <button class="remove-item" aria-label="Remove Premium Smartphone Pro from cart">×</button>
+                                <button class="remove-item" aria-label="Remove Premium Smartphone Pro from cart">Ã—</button>
                             </header>
                             
                             <div class="item-specs">
@@ -73,7 +107,7 @@
                             </div>
                             
                             <div class="item-availability">
-                                <span class="in-stock">✅ In stock</span>
+                                <span class="in-stock">âœ… In stock</span>
                                 <span class="shipping-info">Ships in 1-2 business days</span>
                             </div>
                         </div>
@@ -102,7 +136,7 @@
                         <div class="item-details">
                             <header>
                                 <h3><a href="products.html#product-2">Premium Wireless Headphones</a></h3>
-                                <button class="remove-item" aria-label="Remove Premium Wireless Headphones from cart">×</button>
+                                <button class="remove-item" aria-label="Remove Premium Wireless Headphones from cart">Ã—</button>
                             </header>
                             
                             <div class="item-specs">
@@ -113,7 +147,7 @@
                             </div>
                             
                             <div class="item-availability">
-                                <span class="in-stock">✅ In stock</span>
+                                <span class="in-stock">âœ… In stock</span>
                                 <span class="shipping-info">Free shipping</span>
                             </div>
                         </div>
@@ -135,7 +169,7 @@
                     </article>
 
                     <div class="cart-actions">
-                        <button class="continue-shopping" onclick="location.href='products.html'">← Continue Shopping</button>
+                        <button class="continue-shopping" onclick="location.href='products.html'">â† Continue Shopping</button>
                         <button class="clear-cart">Clear Cart</button>
                     </div>
                 </div>
@@ -169,10 +203,10 @@
                             <div class="payment-options">
                                 <p>We accept:</p>
                                 <div class="payment-logos">
-                                    <span title="Visa">💳</span>
-                                    <span title="Mastercard">💳</span>
-                                    <span title="PayPal">🅿️</span>
-                                    <span title="Apple Pay">📱</span>
+                                    <span title="Visa">ðŸ’³</span>
+                                    <span title="Mastercard">ðŸ’³</span>
+                                    <span title="PayPal">ðŸ…¿ï¸</span>
+                                    <span title="Apple Pay">ðŸ“±</span>
                                 </div>
                             </div>
                         </div>
@@ -193,10 +227,10 @@
                         <div class="shipping-info">
                             <h3>Shipping Information</h3>
                             <ul>
-                                <li>🚚 Free shipping on orders over $75</li>
-                                <li>📦 Standard delivery: 3-5 business days</li>
-                                <li>⚡ Express delivery: 1-2 business days</li>
-                                <li>🔒 Secure checkout with SSL encryption</li>
+                                <li>ðŸšš Free shipping on orders over $75</li>
+                                <li>ðŸ“¦ Standard delivery: 3-5 business days</li>
+                                <li>âš¡ Express delivery: 1-2 business days</li>
+                                <li>ðŸ”’ Secure checkout with SSL encryption</li>
                             </ul>
                         </div>
                     </div>
@@ -263,3 +297,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+

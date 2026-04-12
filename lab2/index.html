@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +8,49 @@
     <meta name="author" content="Madhusmita Choudhary">
     <title>Flipmart - Premium Electronics Store</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Shared Experiment Navbar */
+        .exp-nav {
+            list-style: none;
+            padding: 10px 16px;
+            margin: 0;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .exp-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .exp-nav a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-      <ul style="list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
-            <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
-            <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
-            <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
-            <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
-        </ul>
-    <header role="banner">
+
+<ul class="exp-nav">
+    <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
+    <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
+    <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
+    <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
+    <li><a href="/web_technology/lab5/scientific_calculator.html">Exp 5: Scientific Calculator</a></li>
+    <li><a href="/web_technology/lab6/index.html">Exp 6: Form Validation</a></li>
+    <li><a href="/web_technology/lab7/index.html">Exp 7: Event Handling</a></li>
+    <li><a href="/web_technology/lab8/index.php">Exp 8: PHP Form Handling</a></li>
+    <li><a href="/web_technology/lab9/index.php">Exp 9: PHP + MySQL Products</a></li>
+    <li><a href="/web_technology/lab10/index.php">Exp 10: Sessions and Cookies</a></li>
+</ul>
+
+
+<header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div>
                 <div>
@@ -28,7 +62,7 @@
                 <div>
                     <form role="search" action="#" method="get">
                         <input type="search" placeholder="Search products..." aria-label="Search products" name="q" required>
-                        <button type="submit" aria-label="Search">🔍</button>
+                        <button type="submit" aria-label="Search">ðŸ”</button>
                     </form>
                 </div>
                 
@@ -37,7 +71,7 @@
                         <li role="none"><a href="index.html" role="menuitem">Home</a></li>
                         <li role="none"><a href="products.html" role="menuitem">Products</a></li>
                         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                        <li role="none"><a href="cart.html" role="menuitem">🛒 Cart <span id="cart-count">0</span></a></li>
+                        <li role="none"><a href="cart.html" role="menuitem">ðŸ›’ Cart <span id="cart-count">0</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -71,7 +105,7 @@
                         <div>
                             <span itemprop="price">$899.99</span>
                             <div role="img" aria-label="4.5 out of 5 stars">
-                                <span>⭐⭐⭐⭐☆</span>
+                                <span>â­â­â­â­â˜†</span>
                                 <small>(4.5/5 - 128 reviews)</small>
                             </div>
                         </div>
@@ -92,7 +126,7 @@
                         <div>
                             <span itemprop="price">$1,299.99</span>
                             <div role="img" aria-label="4.8 out of 5 stars">
-                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>â­â­â­â­â­</span>
                                 <small>(4.8/5 - 89 reviews)</small>
                             </div>
                         </div>
@@ -113,7 +147,7 @@
                         <div>
                             <span itemprop="price">$249.99</span>
                             <div role="img" aria-label="4.6 out of 5 stars">
-                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>â­â­â­â­â­</span>
                                 <small>(4.6/5 - 203 reviews)</small>
                             </div>
                         </div>
@@ -132,25 +166,25 @@
                     <img src="smartphones-category.jpg" alt="Smartphones category" width="200" height="150">
                     <h3>Smartphones</h3>
                     <p>Latest mobile devices</p>
-                    <a href="products.html?category=smartphones">Browse →</a>
+                    <a href="products.html?category=smartphones">Browse â†’</a>
                 </div>
                 <div>
                     <img src="laptops-category.jpg" alt="Laptops category" width="200" height="150">
                     <h3>Laptops</h3>
                     <p>Powerful computing solutions</p>
-                    <a href="products.html?category=laptops">Browse →</a>
+                    <a href="products.html?category=laptops">Browse â†’</a>
                 </div>
                 <div>
                     <img src="accessories-category.jpg" alt="Accessories category" width="200" height="150">
                     <h3>Accessories</h3>
                     <p>Essential tech accessories</p>
-                    <a href="products.html?category=accessories">Browse →</a>
+                    <a href="products.html?category=accessories">Browse â†’</a>
                 </div>
                 <div>
                     <img src="audio-category.jpg" alt="Audio category" width="200" height="150">
                     <h3>Audio</h3>
                     <p>Headphones & speakers</p>
-                    <a href="products.html?category=audio">Browse →</a>
+                    <a href="products.html?category=audio">Browse â†’</a>
                 </div>
             </div>
         </section>
@@ -207,10 +241,10 @@
             <div>
                 <h4>Follow Us</h4>
                 <div>
-                    <a href="#" aria-label="Follow us on Facebook">📘</a>
-                    <a href="#" aria-label="Follow us on Twitter">🐦</a>
-                    <a href="#" aria-label="Follow us on Instagram">📷</a>
-                    <a href="#" aria-label="Follow us on LinkedIn">💼</a>
+                    <a href="#" aria-label="Follow us on Facebook">ðŸ“˜</a>
+                    <a href="#" aria-label="Follow us on Twitter">ðŸ¦</a>
+                    <a href="#" aria-label="Follow us on Instagram">ðŸ“·</a>
+                    <a href="#" aria-label="Follow us on LinkedIn">ðŸ’¼</a>
                 </div>
             </div>
         </div>
@@ -223,3 +257,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+

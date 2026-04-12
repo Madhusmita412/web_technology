@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 - Registration and Login Validation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+            padding: 20px;
+        }
+
+        /* Shared Experiment Navbar */
+        .exp-nav {
+            list-style: none;
+            padding: 10px 16px;
+            margin: 0 0 20px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .exp-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .exp-nav a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            margin-top: 0;
+            color: #4b5563;
+        }
+
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+
+        .field {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: 2px solid #93c5fd;
+            border-color: #3b82f6;
+        }
+
+        .checkbox-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-wrap input {
+            width: auto;
+        }
+
+        .error {
+            color: #b91c1c;
+            font-size: 12px;
+            min-height: 16px;
+            margin-top: 4px;
+        }
+
+        .message {
+            margin-top: 8px;
+            font-weight: 600;
+            min-height: 20px;
+        }
+
+        .success {
+            color: #166534;
+        }
+
+        .fail {
+            color: #b91c1c;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            background: #1d4ed8;
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<ul class="exp-nav">
+    <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
+    <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
+    <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
+    <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
+    <li><a href="/web_technology/lab5/scientific_calculator.html">Exp 5: Scientific Calculator</a></li>
+    <li><a href="/web_technology/lab6/index.html">Exp 6: Form Validation</a></li>
+    <li><a href="/web_technology/lab7/index.html">Exp 7: Event Handling</a></li>
+    <li><a href="/web_technology/lab8/index.php">Exp 8: PHP Form Handling</a></li>
+    <li><a href="/web_technology/lab9/index.php">Exp 9: PHP + MySQL Products</a></li>
+    <li><a href="/web_technology/lab10/index.php">Exp 10: Sessions and Cookies</a></li>
+</ul>
+
+
+<h1>Lab 6: Registration and Login</h1>
+    <p class="subtitle">Both forms are validated using JavaScript.</p>
+
+    <div class="forms-grid">
+        <section class="card">
+            <h2>Registration Form</h2>
+            <form id="registrationForm" novalidate>
+                <div class="field">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter full name">
+                    <div class="error" id="fullNameError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" name="regEmail" placeholder="Enter email">
+                    <div class="error" id="regEmailError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="10 digit phone number">
+                    <div class="error" id="phoneError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" name="regPassword" placeholder="At least 8 characters">
+                    <div class="error" id="regPasswordError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password">
+                    <div class="error" id="confirmPasswordError"></div>
+                </div>
+
+                <div class="field">
+                    <label class="checkbox-wrap" for="terms">
+                        <input type="checkbox" id="terms" name="terms">
+                        I agree to the terms and conditions
+                    </label>
+                    <div class="error" id="termsError"></div>
+                </div>
+
+                <button type="submit">Register</button>
+                <div id="registerMessage" class="message"></div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Login Form</h2>
+            <form id="loginForm" novalidate>
+                <div class="field">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter registered email">
+                    <div class="error" id="loginEmailError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter password">
+                    <div class="error" id="loginPasswordError"></div>
+                </div>
+
+                <button type="submit">Login</button>
+                <div id="loginMessage" class="message"></div>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        const registrationForm = document.getElementById('registrationForm');
+        const loginForm = document.getElementById('loginForm');
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^\d{10}$/;
+        const strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+
+        function setError(id, message) {
+            document.getElementById(id).textContent = message;
+        }
+
+        function clearErrors(errorIds) {
+            errorIds.forEach((id) => setError(id, ''));
+        }
+
+        function setMessage(elementId, message, isSuccess) {
+            const box = document.getElementById(elementId);
+            box.textContent = message;
+            box.className = isSuccess ? 'message success' : 'message fail';
+        }
+
+        registrationForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const errorIds = [
+                'fullNameError',
+                'regEmailError',
+                'phoneError',
+                'regPasswordError',
+                'confirmPasswordError',
+                'termsError'
+            ];
+            clearErrors(errorIds);
+            setMessage('registerMessage', '', true);
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const regEmail = document.getElementById('regEmail').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const regPassword = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const termsChecked = document.getElementById('terms').checked;
+
+            let isValid = true;
+
+            if (fullName.length < 3) {
+                setError('fullNameError', 'Full name must be at least 3 characters.');
+                isValid = false;
+            }
+
+            if (!emailPattern.test(regEmail)) {
+                setError('regEmailError', 'Enter a valid email address.');
+                isValid = false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                setError('phoneError', 'Phone number must be exactly 10 digits.');
+                isValid = false;
+            }
+
+            if (!strongPasswordPattern.test(regPassword)) {
+                setError(
+                    'regPasswordError',
+                    'Password must include uppercase, lowercase, number, special character, and 8+ characters.'
+                );
+                isValid = false;
+            }
+
+            if (confirmPassword !== regPassword || confirmPassword === '') {
+                setError('confirmPasswordError', 'Passwords do not match.');
+                isValid = false;
+            }
+
+            if (!termsChecked) {
+                setError('termsError', 'You must accept terms and conditions.');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                setMessage('registerMessage', 'Registration failed. Please fix errors.', false);
+                return;
+            }
+
+            localStorage.setItem(
+                'lab6RegisteredUser',
+                JSON.stringify({
+                    email: regEmail,
+                    password: regPassword,
+                    fullName: fullName,
+                    phone: phone
+                })
+            );
+
+            setMessage('registerMessage', 'Registration successful. You can now login.', true);
+            registrationForm.reset();
+        });
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            clearErrors(['loginEmailError', 'loginPasswordError']);
+            setMessage('loginMessage', '', true);
+
+            const loginEmail = document.getElementById('loginEmail').value.trim();
+            const loginPassword = document.getElementById('loginPassword').value;
+
+            let isValid = true;
+
+            if (!emailPattern.test(loginEmail)) {
+                setError('loginEmailError', 'Enter a valid email address.');
+                isValid = false;
+            }
+
+            if (loginPassword.length < 8) {
+                setError('loginPasswordError', 'Password must be at least 8 characters.');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                setMessage('loginMessage', 'Login failed. Please fix errors.', false);
+                return;
+            }
+
+            const raw = localStorage.getItem('lab6RegisteredUser');
+            if (!raw) {
+                setMessage('loginMessage', 'No registered user found. Please register first.', false);
+                return;
+            }
+
+            const savedUser = JSON.parse(raw);
+            if (savedUser.email === loginEmail && savedUser.password === loginPassword) {
+                setMessage('loginMessage', 'Login successful. Welcome back!', true);
+                loginForm.reset();
+            } else {
+                setMessage('loginMessage', 'Invalid email or password.', false);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

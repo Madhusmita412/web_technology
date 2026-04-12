@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab Experiment 7: Student and Market Operations</title>
+  <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Shared Experiment Navbar */
+        .exp-nav {
+            list-style: none;
+            padding: 10px 16px;
+            margin: 0;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .exp-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .exp-nav a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="exp-nav">
+    <li><a href="/web_technology/lab1/index.html">Exp 1: Basic Website</a></li>
+    <li><a href="/web_technology/lab2/index.html">Exp 2: E-commerce</a></li>
+    <li><a href="/web_technology/lab3/index.html">Exp 3: CSS Enhanced (Exp1)</a></li>
+    <li><a href="/web_technology/lab4/index.html">Exp 4: CSS Enhanced (Exp2)</a></li>
+    <li><a href="/web_technology/lab5/scientific_calculator.html">Exp 5: Scientific Calculator</a></li>
+    <li><a href="/web_technology/lab6/index.html">Exp 6: Form Validation</a></li>
+    <li><a href="/web_technology/lab7/index.html">Exp 7: Event Handling</a></li>
+    <li><a href="/web_technology/lab8/index.php">Exp 8: PHP Form Handling</a></li>
+    <li><a href="/web_technology/lab9/index.php">Exp 9: PHP + MySQL Products</a></li>
+    <li><a href="/web_technology/lab10/index.php">Exp 10: Sessions and Cookies</a></li>
+</ul>
+
+
+<main class="container">
+    <h1>Lab Experiment 7: Student and Market Operations</h1>
+    <p class="subtitle">Combined in one page using map(), filter(), sort(), and slice() with a fresh look.</p>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Student Operations</h2>
+        <div class="controls">
+          <button id="stu-print-names">Print All Names</button>
+          <button id="stu-marks-gt-80">Marks &gt; 80</button>
+          <button id="stu-top-3">Top 3 by Marks</button>
+          <input id="stu-dept-input" placeholder="Enter department e.g. CSE">
+          <button id="stu-filter-dept">Filter by Department</button>
+        </div>
+        <textarea id="stu-output" readonly class="output" placeholder="Student output appears here..."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>Market Operations</h2>
+        <div class="controls">
+          <button id="prod-print-names">Print All Product Names</button>
+          <button id="prod-price-gt-80">Price &gt; 80</button>
+          <button id="prod-sort-name">Sort by Name</button>
+          <input id="prod-cat-input" placeholder="Enter category e.g. Electronics">
+          <button id="prod-filter-cat">Filter by Category</button>
+        </div>
+        <textarea id="prod-output" readonly class="output" placeholder="Market output appears here..."></textarea>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
