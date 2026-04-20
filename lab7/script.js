@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const stuTop3Btn=document.getElementById('stu-top-3');
   const stuDeptInput=document.getElementById('stu-dept-input');
   const stuFilterDeptBtn=document.getElementById('stu-filter-dept');
-  const stuOutput=document.getElementById('stu-output');
+  const stuOutputBody=document.getElementById('stu-output-body');
 
   // Product elements
   const prodNamesBtn=document.getElementById('prod-print-names');
@@ -31,53 +31,87 @@ document.addEventListener('DOMContentLoaded',()=>{
   const prodSortNameBtn=document.getElementById('prod-sort-name');
   const prodCatInput=document.getElementById('prod-cat-input');
   const prodFilterCatBtn=document.getElementById('prod-filter-cat');
-  const prodOutput=document.getElementById('prod-output');
+  const prodOutputBody=document.getElementById('prod-output-body');
 
-  function show(target,lines){ target.value = Array.isArray(lines) ? lines.join('\n') : String(lines); }
+  function renderRows(tbody, rows, emptyMessage){
+    tbody.innerHTML = '';
+
+    if (!rows.length) {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.colSpan = 3;
+      td.className = 'empty';
+      td.textContent = emptyMessage;
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      return;
+    }
+
+    rows.forEach((row)=>{
+      const tr = document.createElement('tr');
+      row.forEach((value)=>{
+        const td = document.createElement('td');
+        td.textContent = String(value);
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  function showStudents(list, emptyMessage){
+    const rows = list.map((s)=>[s.name, s.dept, s.marks]);
+    renderRows(stuOutputBody, rows, emptyMessage);
+  }
+
+  function showProducts(list, emptyMessage){
+    const rows = list.map((p)=>[p.name, p.category, 'Rs ' + p.price]);
+    renderRows(prodOutputBody, rows, emptyMessage);
+  }
 
   // Students handlers
   stuNamesBtn.addEventListener('click',()=>{
-    const names = students.map(s=>s.name);
-    show(stuOutput,names);
+    const namesOnly = students.map((s)=>({ name:s.name, dept:'-', marks:'-' }));
+    showStudents(namesOnly, 'No student data found.');
   });
 
   stuGt80Btn.addEventListener('click',()=>{
-    const filtered = students.filter(s=>s.marks>80).map(s=>`${s.name} (${s.marks})`);
-    show(stuOutput, filtered.length? filtered : 'No students with marks > 80');
+    const filtered = students.filter((s)=>s.marks>80);
+    showStudents(filtered, 'No students with marks greater than 80.');
   });
 
   stuTop3Btn.addEventListener('click',()=>{
-    const top3 = students.slice().sort((a,b)=>b.marks-a.marks).slice(0,3).map(s=>`${s.name} - ${s.marks}`);
-    show(stuOutput, top3);
+    const top3 = students.slice().sort((a,b)=>b.marks-a.marks).slice(0,3);
+    showStudents(top3, 'No student data found.');
   });
 
   stuFilterDeptBtn.addEventListener('click',()=>{
     const dept = (stuDeptInput.value||'').trim();
-    if(!dept){ show(stuOutput,'Please enter a department'); return }
-    const out = students.filter(s=>s.dept.toLowerCase()===dept.toLowerCase()).map(s=>`${s.name} — ${s.dept} — ${s.marks}`);
-    show(stuOutput,out.length?out:`No students found in "${dept}"`);
+    if(!dept){ renderRows(stuOutputBody, [], 'Please enter a department.'); return }
+    const out = students.filter((s)=>s.dept.toLowerCase()===dept.toLowerCase());
+    showStudents(out, 'No students found in "' + dept + '".');
   });
 
   // Products handlers
   prodNamesBtn.addEventListener('click',()=>{
-    show(prodOutput, products.map(p=>p.name));
+    const namesOnly = products.map((p)=>({ name:p.name, category:'-', price:'-' }));
+    showProducts(namesOnly, 'No product data found.');
   });
 
   prodPriceGtBtn.addEventListener('click',()=>{
-    const out = products.filter(p=>p.price>80).map(p=>`${p.name} — $${p.price}`);
-    show(prodOutput, out.length?out:'No products with price > 80');
+    const out = products.filter((p)=>p.price>80);
+    showProducts(out, 'No products with price greater than 80.');
   });
 
   prodSortNameBtn.addEventListener('click',()=>{
-    const sorted = products.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(p=>`${p.name} — ${p.category} — $${p.price}`);
-    show(prodOutput, sorted);
+    const sorted = products.slice().sort((a,b)=>a.name.localeCompare(b.name));
+    showProducts(sorted, 'No product data found.');
   });
 
   prodFilterCatBtn.addEventListener('click',()=>{
     const cat = (prodCatInput.value||'').trim();
-    if(!cat){ show(prodOutput,'Please enter a category'); return }
-    const out = products.filter(p=>p.category.toLowerCase()===cat.toLowerCase()).map(p=>`${p.name} — $${p.price}`);
-    show(prodOutput,out.length?out:`No products found in "${cat}"`);
+    if(!cat){ renderRows(prodOutputBody, [], 'Please enter a category.'); return }
+    const out = products.filter((p)=>p.category.toLowerCase()===cat.toLowerCase());
+    showProducts(out, 'No products found in "' + cat + '".');
   });
 
 });

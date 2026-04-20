@@ -49,7 +49,6 @@
 
 <main class="container">
     <h1>Lab Experiment 7: Student and Market Operations</h1>
-    <p class="subtitle">Combined in one page using map(), filter(), sort(), and slice() with a fresh look.</p>
 
     <section class="grid">
       <div class="card">
@@ -61,7 +60,22 @@
           <input id="stu-dept-input" placeholder="Enter department e.g. CSE">
           <button id="stu-filter-dept">Filter by Department</button>
         </div>
-        <textarea id="stu-output" readonly class="output" placeholder="Student output appears here..."></textarea>
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Marks</th>
+              </tr>
+            </thead>
+            <tbody id="stu-output-body">
+              <tr>
+                <td class="empty" colspan="3">Click any student button to view results.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="card">
@@ -73,7 +87,22 @@
           <input id="prod-cat-input" placeholder="Enter category e.g. Electronics">
           <button id="prod-filter-cat">Filter by Category</button>
         </div>
-        <textarea id="prod-output" readonly class="output" placeholder="Market output appears here..."></textarea>
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="prod-output-body">
+              <tr>
+                <td class="empty" colspan="3">Click any market button to view results.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
